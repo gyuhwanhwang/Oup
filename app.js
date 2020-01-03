@@ -3,6 +3,8 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+import routes from "./routes";
+import globalRouter from "./routers/globalRouter";
 
 const app = express();
 
@@ -13,9 +15,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); // for logging
 
-const hello = (req, res) => {
-    res.send("hello");
-};
-app.get("/", hello);
+app.use(routes.home, globalRouter);
 
 export default app;
