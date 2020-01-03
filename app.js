@@ -7,6 +7,7 @@ import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import poemRouter from "./routers/poemRouter";
+import { localMidlleware } from "./middlewares";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); // for logging
+app.use(localMidlleware);
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);

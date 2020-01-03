@@ -1,21 +1,21 @@
 import routes from "../routes";
 
 export const home = (req, res) => {
-    res.send("home");
+    res.render("global/home");
 };
 
 export const join = (req, res) => {
-    res.send("join");
+    res.render("global/join");
 };
 
 export const login = (req, res) => {
-    res.send("login");
+    res.render("global/login");
 };
 
 export const logout = (req, res) => {
-    res.send("logout");
+    res.redirect(routes.home);
 };
 
 export const search = (req, res) => {
-    res.send("search");
+    res.render("global/search");
 };

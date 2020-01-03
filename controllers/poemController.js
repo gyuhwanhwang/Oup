@@ -1,11 +1,11 @@
 export const upload = (req, res) => {
-    res.send("upload");
+    res.render("poem/upload");
 };
 
 export const poemDetail = (req, res) => {
-    res.send("poemDetail");
+    res.render("poem/poemDetail");
 };
 
 export const deletePoem = (req, res) => {
-    res.send("deletePoem");
+    res.render("poem/deletePoem");
 };
