@@ -19,3 +19,7 @@ export const logout = (req, res) => {
 export const search = (req, res) => {
     res.render("global/search", { pageTitle: "search" });
 };
+
+export const developer = (req, res) => {
+    res.redirect("https://github.com/gyuhwanhwang");
+};
