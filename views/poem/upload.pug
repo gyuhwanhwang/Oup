@@ -1,4 +1,7 @@
 extend ../layouts/main.pug
 
 block content
-    p pug upload Poem
+    form(action=`/poems${routes.upload}`, method="post")
+            input(type="text", placeholder="Title", name="title", required=true)
+            textarea(name="description" placeholder="Description", required=true)
+            input(type="submit", value="Upload Poem")
