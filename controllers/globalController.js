@@ -1,5 +1,5 @@
 import routes from "../routes";
-
+import poems from "../db";
 export const home = (req, res) => {
     res.render("global/home", { pageTitle: "home" });
 };
@@ -17,7 +17,10 @@ export const logout = (req, res) => {
 };
 
 export const search = (req, res) => {
-    res.render("global/search", { pageTitle: "search" });
+    const {
+        query: { searching: searchingBy }
+    } = req;
+    res.render("global/search", { pageTitle: "search", searchingBy, poems });
 };
 
 export const developer = (req, res) => {

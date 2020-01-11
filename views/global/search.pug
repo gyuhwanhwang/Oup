@@ -1,4 +1,9 @@
 extend ../layouts/main.pug
 
 block content
-    p pug search
+    .search__header
+        h3 Searching by #{searchingBy}
+    .search__poems
+        each poem in poems
+            h3=poem.title
+            h5=poem.content
