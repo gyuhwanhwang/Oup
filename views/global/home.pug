@@ -1,4 +1,12 @@
-extend ../layouts/main.pug
+extends ../layouts/main.pug
+include ../mixins/poemBlock
 
 block content
-    p pug home
+    .poems
+        each poem in poems
+            +poemBlock({
+                id: poem.id,
+                title: poem.title,
+                content: poem.content
+
+            })

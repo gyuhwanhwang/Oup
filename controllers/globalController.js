@@ -1,7 +1,7 @@
 import routes from "../routes";
 import poems from "../db";
 export const home = (req, res) => {
-    res.render("global/home", { pageTitle: "home" });
+    res.render("global/home", { pageTitle: "home", poems });
 };
 
 export const join = (req, res) => {
