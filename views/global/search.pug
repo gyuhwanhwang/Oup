@@ -1,9 +1,13 @@
-extend ../layouts/main.pug
+extends ../layouts/main.pug
+include ../mixins/poemBlock
 
 block content
     .search__header
         h3 Searching by #{searchingBy}
     .search__poems
         each poem in poems
-            h3=poem.title
-            h5=poem.content
+            +poemBlock({
+                id: poem.id,
+                title: poem.title,
+                content: poem.content
+            })
