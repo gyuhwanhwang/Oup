@@ -33,7 +33,13 @@ const routes = {
     //poem
     poems: POEMS,
     upload: UPLOAD,
-    poemDetail: POEM_DETAIL,
+    poemDetail: id => {
+        if (id) {
+            return `/poems/${id}`;
+        } else {
+            return POEM_DETAIL;
+        }
+    },
     deletePoem: DELETE_POEM
 };
 

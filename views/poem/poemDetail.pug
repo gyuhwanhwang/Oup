@@ -1,4 +1,7 @@
-extend ../layouts/main.pug
+extends ../layouts/main.pug
 
 block content
-    p pug peom Detail
+    .poem__info
+        a(href=routes.deletePoem) delete.
+        h1.poem__title=poems.title
+        h3.poem__content=poems.content

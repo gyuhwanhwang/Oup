@@ -6,6 +6,6 @@ const peomRouter = express.Router();
 
 peomRouter.get(routes.upload, upload);
 peomRouter.get(routes.deletePoem, deletePoem);
-peomRouter.get(routes.poemDetail, poemDetail);
+peomRouter.get(routes.poemDetail(), poemDetail);
 
 export default peomRouter;

@@ -1,5 +1,5 @@
 mixin poemBlock(poem = {})
     .poemBlock
-        a(href=routes.videoDetail)
+        a(href=routes.poemDetail(poem.id))
             h3.poemBlock__title= poem.title
             h5.poemBlock__content=poem.content
