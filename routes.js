@@ -27,7 +27,14 @@ const routes = {
     developer: DEVELOPER,
     // user
     users: USERS,
-    userDetail: USER_DETAIL,
+    users: USERS,
+    userDetail: id => {
+        if (id) {
+            return `/users/${id}`;
+        } else {
+            return USER_DETAIL;
+        }
+    },
     changePassword: CHANGE_PASSWORD,
     editProfile: EDIT_PROFILE,
     //poem
